@@ -1,0 +1,23 @@
+sentry:
+  build: ./
+  links: 
+    - redis
+    - mysql
+  ports:
+    - "9000:9000"
+
+mysql:
+  image: mysql:5.6
+  expose:
+    - "3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: secret-root
+    MYSQL_DATABASE: web
+    MYSQL_USER: web
+    MYSQL_PASSWORD: web
+
+redis:
+  image: index.alauda.cn/idarex/redis:latest
+
+# sentry upgrade 
+#  sentry createuser
