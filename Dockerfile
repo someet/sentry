@@ -1,1 +1,2 @@
-FROM sentry:6
+FROM slafs/sentry:latest
+
